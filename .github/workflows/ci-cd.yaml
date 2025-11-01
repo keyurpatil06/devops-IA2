@@ -1,0 +1,26 @@
+name: Customer Query Classification CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: pip install -r app/requirements.txt
+
+      - name: Train Model
+        run: python ai_model/train_model.py
+
+      - name: Test Prediction
+        run: python ai_model/predict.py
