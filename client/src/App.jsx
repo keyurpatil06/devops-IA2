@@ -32,7 +32,7 @@ function App() {
         fontFamily: "sans-serif",
       }}
     >
-      <h1 style={{ marginBottom: "1rem" }}>Bank Query Classifier</h1>
+      <h1 style={{ marginBottom: "1rem" }}>Customer Query Classifier (AI + Devops)</h1>
       <form onSubmit={handleSubmit} style={{ display: "flex", gap: "1rem" }}>
         <input
           type="text"
