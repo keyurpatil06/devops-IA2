@@ -11,7 +11,9 @@ function App() {
     if (!query) return;
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:5000/predict", { query });
+      const res = await axios.post("https://devops-ia2.onrender.com/predict", {
+        query,
+      });
       setCategory(res.data.category);
     } catch (err) {
       console.error(err);
